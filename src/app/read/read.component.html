@@ -1,0 +1,10 @@
+<p *ngIf="loading">loading...</p>
+<ng-template [ngIf]="(tutorials | json) != '{}'">
+    <ul>
+        <li (click)="removeTutorial(key.value._id)" *ngFor="let key of tutorials | objectArray">
+            {{key.value.name}}, {{key.value.url}}
+        </li>
+    </ul>
+</ng-template>
+<button (click)="findDetect()">findDetect</button>
+<app-widget [tutorial]="data"></app-widget>
